@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة التصاريح</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>لوحة إدارة التصاريح</h2>
+
+    <div class="permit-form">
+        <h3>إنشاء تصريح جديد</h3>
+        <input type="text" id="fullName" placeholder="الاسم الكامل">
+        <input type="text" id="idNumber" placeholder="رقم الهوية">
+        <select id="gender">
+            <option value="ذكر">ذكر</option>
+            <option value="أنثى">أنثى</option>
+        </select>
+        <input type="text" id="nationality" placeholder="الجنسية">
+        <input type="date" id="dob" placeholder="تاريخ الميلاد">
+        <input type="text" id="uniqueId" placeholder="رقم التعريف">
+        <button onclick="createPermit()">إنشاء التصريح</button>
+        <p id="permitMessage"></p>
+    </div>
+
+    <h3>التصريح:</h3>
+    <div id="permitCard">
+        <div class="card">
+            <h3>تصريح رسمي</h3>
+            <p><strong>الاسم:</strong> <span id="p_fullName"></span></p>
+            <p><strong>رقم الهوية:</strong> <span id="p_idNumber"></span></p>
+            <p><strong>الجنسية:</strong> <span id="p_nationality"></span></p>
+            <p><strong>الجنس:</strong> <span id="p_gender"></span></p>
+            <p><strong>تاريخ الميلاد:</strong> <span id="p_dob"></span></p>
+            <p><strong>تاريخ الانتهاء:</strong> <span id="p_expiryDate"></span></p>
+            <canvas id="qrcode"></canvas>
+        </div>
+    </div>
+
+    <button onclick="downloadPermit()">تحميل التصريح</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
